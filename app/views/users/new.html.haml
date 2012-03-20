@@ -1,0 +1,16 @@
+Create a new user
+= form_for(@user) do |f|
+  - if @user.errors.any?
+    - @user.errors.full_messages.each do |msg|
+      = msg
+  .field
+    = f.label :username
+    = f.text_field :username
+  .field
+    = f.label :password
+    = f.password_field :password
+  .field
+    = f.label :email
+    = f.text_field :email
+  .actions
+    = f.submit
