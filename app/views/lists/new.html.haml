@@ -1,0 +1,13 @@
+Create a new list
+= form_for(@list) do |f|
+  - if @list.errors.any?
+    - @list.errors.full_messages.each do |msg|
+      = msg
+  .field
+    = f.label :title
+    = f.text_field :title
+  .field
+    = f.label :description
+    = f.text_field :description
+  .actions
+    = f.submit
