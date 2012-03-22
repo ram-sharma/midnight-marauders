@@ -57,5 +57,12 @@ MidnightMarauders::Application.routes.draw do
   # match ':controller(/:action(/:id))(.:format)'
   root :to => 'home#index'
 
+  ["login", "logout"].each do |tool|
+    get tool => "users#" + tool
+  end
+  ["login"].each do |tool|
+    post tool => "users#" + tool
+  end
   resources :users
+  resources :lists
 end

@@ -15,31 +15,29 @@ ActiveRecord::Schema.define(:version => 20120318125435) do
 
   create_table "karmas", :force => true do |t|
     t.integer  "value"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.integer  "karmable_id"
+    t.string   "karmable_type"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
   end
 
   create_table "list_items", :force => true do |t|
     t.integer  "list_id"
     t.string   "dis"
-    t.integer  "karma_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
 
-  add_index "list_items", ["karma_id"], :name => "index_list_items_on_karma_id"
   add_index "list_items", ["list_id"], :name => "index_list_items_on_list_id"
 
   create_table "lists", :force => true do |t|
     t.integer  "user_id"
     t.text     "description"
-    t.integer  "karma_id"
     t.string   "title"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end
 
-  add_index "lists", ["karma_id"], :name => "index_lists_on_karma_id"
   add_index "lists", ["user_id"], :name => "index_lists_on_user_id"
 
   create_table "users", :force => true do |t|
@@ -48,7 +46,6 @@ ActiveRecord::Schema.define(:version => 20120318125435) do
     t.string   "password"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
-    t.integer  "karma_id"
   end
 
 end
