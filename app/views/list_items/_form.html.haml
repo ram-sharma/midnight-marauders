@@ -1,0 +1,6 @@
+= form_for([@list, @list.list_items.build]) do |l|
+  .field
+    = l.label :item
+    = l.text_field :dis
+  .actions
+    = l.submit

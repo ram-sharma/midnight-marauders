@@ -13,7 +13,7 @@ class ListsController < ActionController::Base
   end
 
   def create
-    @list = List.new(params[:list])
+    @list = List.new(params[:list].merge({:user_id => session[:user].id}))
 
     respond_to do |format|
       if @list.save

@@ -1,4 +1,9 @@
 class UsersController < ActionController::Base
+
+  def index
+    @users = User.all
+  end
+
   def new
     @user = User.new
 
@@ -20,6 +25,10 @@ class UsersController < ActionController::Base
         format.json { render :json => @post.errors, :status => :unprocessable_entity }
       end
     end
+  end
+
+  def show
+    @user = User.find params[:id]
   end
 
   def login
