@@ -1,3 +1,7 @@
 = @user.username
 - @user.lists.each do |list|
   = link_to list.title, list
+= "Current karma: #{@user.karma.value}"
+= form_for @user.karma do |k|
+  .actions
+    = k.submit "Add Teh Karma"

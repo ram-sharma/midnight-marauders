@@ -14,11 +14,11 @@
 ActiveRecord::Schema.define(:version => 20120318125435) do
 
   create_table "karmas", :force => true do |t|
-    t.integer  "value"
+    t.integer  "value",         :default => 0
     t.integer  "karmable_id"
     t.string   "karmable_type"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
+    t.datetime "created_at",                   :null => false
+    t.datetime "updated_at",                   :null => false
   end
 
   create_table "list_items", :force => true do |t|

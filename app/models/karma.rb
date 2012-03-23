@@ -1,3 +1,3 @@
 class Karma < ActiveRecord::Base
-  belongs_to
+  belongs_to :karmable, :polymorphic => true
 end

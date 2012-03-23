@@ -2,3 +2,7 @@
 = @list.description
 = render @list.list_items
 = render "list_items/form"
+= "Current karma: #{@list.karma.value}"
+= form_for @list.karma do |k|
+  .actions
+    = k.submit "Add Teh Karma"
