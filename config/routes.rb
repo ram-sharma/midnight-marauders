@@ -68,5 +68,5 @@ MidnightMarauders::Application.routes.draw do
   resources :lists do
     resources :list_items
   end
-  resources :karmas
+  resources :karmas, :only => [:update, :show]
 end

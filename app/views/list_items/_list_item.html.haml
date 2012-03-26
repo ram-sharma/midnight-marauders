@@ -1,1 +1,5 @@
 = list_item.dis
+= "Current karma: #{list_item.karma.value}"
+= form_for list_item.karma do |k|
+  .actions
+    = k.submit "Add Teh Karma"
