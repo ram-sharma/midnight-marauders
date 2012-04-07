@@ -1,3 +1,6 @@
-= "Hello #{@user.username if @user}"
-%br
-= link_to "New User", new_user_path
+%div
+  = "Hello #{@user.username if @user}"
+  %br
+  = link_to "New User", new_user_path if not @user
+.loginBox
+  = render "users/login"

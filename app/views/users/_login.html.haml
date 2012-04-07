@@ -1,0 +1,10 @@
+Login
+= form_tag :controller => "users", :action => "login" do
+  .field
+    = label_tag :username
+    = text_field :user, :username
+  .field
+    = label_tag :password
+    = password_field :user, :password
+  .actions
+    = submit_tag "Submit"

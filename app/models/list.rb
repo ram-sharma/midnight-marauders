@@ -1,7 +1,8 @@
 class List < ActiveRecord::Base
   belongs_to :user
-  has_one :karma, :as => :karmable
-  has_many :list_items
+  has_one :karma, :as => :karmable, :dependent => :destroy
+  has_many :list_items, :dependent => :destroy
+
 
   after_create :create_karma
 

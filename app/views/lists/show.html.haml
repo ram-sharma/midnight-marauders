@@ -1,3 +1,4 @@
+= flash[:error] if flash[:error]
 = @list.title
 = @list.description
 = render @list.list_items
@@ -6,3 +7,4 @@
 = form_for @list.karma do |k|
   .actions
     = k.submit "Add Teh Karma"
+= link_to "Delete List", @list, :method => :delete

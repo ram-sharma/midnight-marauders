@@ -11,3 +11,15 @@
  *= require_self
  *= require_tree .
 */
+
+* {
+  margin: 0px;
+  padding: 0px;
+}
+.loginBox {
+  display: inline-table;
+  float:right;
+  background-color: #58F;
+  padding: 20px;
+  border-radius: 5px;
+}

@@ -1,4 +1,5 @@
-class ListsController < ActionController::Base
+class ListsController < ApplicationController
+  before_filter :check_user, :only => :destroy
   def index
     @lists = List.all
   end
@@ -29,4 +30,20 @@ class ListsController < ActionController::Base
   def show
     @list = List.find params[:id]
   end
-end
+
+  def destroy
+    @list = List.find params[:id]
+    @list.destroy
+
+    respond_to do |format|
+      format.html { redirect_to lists_url }
+      format.json { head :no_content }
+    end
+    end
+
+    protected
+
+    def check_user
+      raise User::NotAuthorized unless List.find(params[:id]).user == session[:user]
+    end
+  end

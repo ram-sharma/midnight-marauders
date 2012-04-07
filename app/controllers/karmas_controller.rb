@@ -1,4 +1,4 @@
-class KarmasController < ActionController::Base
+class KarmasController < ApplicationController
   def update
     @karma = Karma.find params[:id]
     @karma.increment(:value)
